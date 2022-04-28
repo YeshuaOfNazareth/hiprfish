@@ -1,0 +1,196 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                                   count    min threads    max threads
+----------------------------------  -------  -------------  -------------
+add_spacers                               1              1              1
+all                                       1              1              1
+blast_probes                              1              1              1
+collect_probe_coverage_results            1              1              1
+collect_selected_probe_information        1              1              1
+combine_full_length_sequences             1              1              1
+design_probes                             1              1              1
+evaluate_taxon_probes                     1              1              1
+generate_full_probes                      1              1              1
+select_taxon_probes                       1              1              1
+total                                    10              1              1
+
+Select jobs to execute...
+
+[Tue Mar 29 00:47:32 2022]
+rule design_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/input/mock_community.fasta, /home/miri/Desktop/HIPRFISH/data/mock_community
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/{*}_consensus.int (dynamic)
+    jobid: 8
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1
+    resources: tmpdir=/tmp
+
+Subsequent jobs will be added dynamically depending on the output of this job
+[Tue Mar 29 01:31:40 2022]
+Finished job 8.
+1 of 10 steps (10%) done
+Dynamically updating jobs
+Select jobs to execute...
+
+[Tue Mar 29 01:32:21 2022]
+rule blast_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/32046_consensus.int
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/32046.probe.blast.complete.txt
+    jobid: 731
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=32046
+    resources: tmpdir=/tmp
+
+
+[Tue Mar 29 01:32:21 2022]
+rule blast_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/1134405_consensus.int
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/1134405.probe.blast.complete.txt
+    jobid: 2023
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=1134405
+    resources: tmpdir=/tmp
+
+
+[Tue Mar 29 01:32:21 2022]
+rule blast_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/1092_consensus.int
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/1092.probe.blast.complete.txt
+    jobid: 199
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=1092
+    resources: tmpdir=/tmp
+
+
+[Tue Mar 29 01:32:21 2022]
+rule blast_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/200_consensus.int
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/200.probe.blast.complete.txt
+    jobid: 1363
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=200
+    resources: tmpdir=/tmp
+
+
+[Tue Mar 29 01:32:22 2022]
+rule blast_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/1731_consensus.int
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/1731.probe.blast.complete.txt
+    jobid: 1667
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=1731
+    resources: tmpdir=/tmp
+
+
+[Tue Mar 29 01:32:22 2022]
+rule blast_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/591197_consensus.int
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/591197.probe.blast.complete.txt
+    jobid: 1071
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=591197
+    resources: tmpdir=/tmp
+
+
+[Tue Mar 29 01:32:22 2022]
+rule blast_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/28199_consensus.int
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/28199.probe.blast.complete.txt
+    jobid: 1899
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=28199
+    resources: tmpdir=/tmp
+
+
+[Tue Mar 29 01:32:22 2022]
+rule blast_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/203_consensus.int
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/203.probe.blast.complete.txt
+    jobid: 927
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=203
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 01:51:11 2022]
+Finished job 1899.
+2 of 2206 steps (0.1%) done
+Select jobs to execute...
+
+[Tue Mar 29 01:51:11 2022]
+rule evaluate_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/28199_consensus.int, /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/28199.probe.blast.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast/28199.probe.evaluation.complete.txt
+    jobid: 1898
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=28199
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 01:51:11 2022]
+Finished job 1667.
+3 of 2206 steps (0.1%) done
+Select jobs to execute...
+
+[Tue Mar 29 01:51:11 2022]
+rule evaluate_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/1731_consensus.int, /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/1731.probe.blast.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast/1731.probe.evaluation.complete.txt
+    jobid: 1666
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=1731
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 01:51:40 2022]
+Finished job 927.
+4 of 2206 steps (0.2%) done
+Select jobs to execute...
+
+[Tue Mar 29 01:51:40 2022]
+rule evaluate_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/203_consensus.int, /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/203.probe.blast.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast/203.probe.evaluation.complete.txt
+    jobid: 926
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=203
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 01:51:46 2022]
+Finished job 1363.
+5 of 2206 steps (0.2%) done
+Select jobs to execute...
+
+[Tue Mar 29 01:51:46 2022]
+rule evaluate_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/200_consensus.int, /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/200.probe.blast.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast/200.probe.evaluation.complete.txt
+    jobid: 1362
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=200
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 01:51:48 2022]
+Error in rule evaluate_taxon_probes:
+    jobid: 1898
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast/28199.probe.evaluation.complete.txt
+    shell:
+        python3 /home/miri/Desktop/HIPRFISH/hiprfish_code/probe-design/hiprfish-probe-design-consensus/hiprfish_evaluate_probes.py /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/28199_consensus.int -cdir /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/consensus
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Tue Mar 29 01:52:00 2022]
+Finished job 731.
+6 of 2206 steps (0.3%) done
+[Tue Mar 29 01:52:11 2022]
+Finished job 199.
+7 of 2206 steps (0.3%) done
+[Tue Mar 29 01:53:12 2022]
+Finished job 1071.
+8 of 2206 steps (0.4%) done
+[Tue Mar 29 01:53:20 2022]
+Finished job 2023.
+9 of 2206 steps (0.4%) done
+[Tue Mar 29 01:53:33 2022]
+Error in rule evaluate_taxon_probes:
+    jobid: 1666
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast/1731.probe.evaluation.complete.txt
+    shell:
+        python3 /home/miri/Desktop/HIPRFISH/hiprfish_code/probe-design/hiprfish-probe-design-consensus/hiprfish_evaluate_probes.py /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/1731_consensus.int -cdir /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/consensus
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Tue Mar 29 01:56:21 2022]
+Finished job 926.
+10 of 2206 steps (0.5%) done
+[Tue Mar 29 01:56:24 2022]
+Finished job 1362.
+11 of 2206 steps (0.5%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/miri/Desktop/HIPRFISH/hiprfish_code/probe-design/hiprfish-probe-design-consensus/.snakemake/log/2022-03-29T004732.497589.snakemake.log

@@ -1,0 +1,122 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                                   count    min threads    max threads
+----------------------------------  -------  -------------  -------------
+add_spacers                               1              1              1
+all                                       1              1              1
+blast_probes                              1              1              1
+collect_probe_coverage_results            1              1              1
+collect_selected_probe_information        1              1              1
+combine_full_length_sequences             1              1              1
+design_probes                             1              1              1
+evaluate_taxon_probes                     1              1              1
+generate_full_probes                      1              1              1
+select_taxon_probes                       1              1              1
+total                                    10              1              1
+
+Select jobs to execute...
+
+[Tue Feb 22 20:01:12 2022]
+rule design_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/input/mock_community.fasta, /home/miri/Desktop/HIPRFISH/data/mock_community
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/{*}_consensus.int (dynamic)
+    jobid: 8
+    wildcards: sample=mock_community, target_rank=genus, similarity=0.1
+    resources: tmpdir=/tmp
+
+Subsequent jobs will be added dynamically depending on the output of this job
+[Tue Feb 22 20:01:18 2022]
+Finished job 8.
+1 of 10 steps (10%) done
+Dynamically updating jobs
+Select jobs to execute...
+
+[Tue Feb 22 20:01:18 2022]
+rule blast_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/32207_consensus.int
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/32207.probe.blast.complete.txt
+    jobid: 15
+    wildcards: sample=mock_community, target_rank=genus, similarity=0.1, taxon=32207
+    resources: tmpdir=/tmp
+
+[Tue Feb 22 20:03:42 2022]
+Finished job 15.
+2 of 10 steps (20%) done
+Select jobs to execute...
+
+[Tue Feb 22 20:03:42 2022]
+rule evaluate_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/32207_consensus.int, /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/32207.probe.blast.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/blast/32207.probe.evaluation.complete.txt
+    jobid: 14
+    wildcards: sample=mock_community, target_rank=genus, similarity=0.1, taxon=32207
+    resources: tmpdir=/tmp
+
+[Tue Feb 22 20:06:23 2022]
+Finished job 14.
+3 of 10 steps (30%) done
+Select jobs to execute...
+
+[Tue Feb 22 20:06:23 2022]
+rule select_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/blast/32207.probe.evaluation.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/SP1/32207_probe_selection.csv
+    jobid: 13
+    wildcards: design_id=SP1, taxon=32207
+    resources: tmpdir=/tmp
+
+[Tue Feb 22 20:08:50 2022]
+Finished job 13.
+4 of 10 steps (40%) done
+Select jobs to execute...
+
+[Tue Feb 22 20:08:50 2022]
+rule add_spacers:
+    input: /home/miri/Desktop/HIPRFISH/data/simulation/SP1/32207_probe_selection.csv
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/SP1/32207_probe_selection_sa.csv
+    jobid: 12
+    wildcards: design_id=SP1, taxon=32207
+    resources: tmpdir=/tmp
+
+[Tue Feb 22 20:08:51 2022]
+Finished job 12.
+5 of 10 steps (50%) done
+Select jobs to execute...
+
+[Tue Feb 22 20:08:51 2022]
+rule collect_selected_probe_information:
+    input: /home/miri/Desktop/HIPRFISH/simulation_table/simulation_table_mock.csv, /home/miri/Desktop/HIPRFISH/data/simulation/SP1, /home/miri/Desktop/HIPRFISH/data/simulation/SP1/32207_probe_selection_sa.csv
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/SP1/taxon_best_probes.csv, /home/miri/Desktop/HIPRFISH/data/simulation/SP1/taxon_best_probes_filtered.csv, /home/miri/Desktop/HIPRFISH/data/simulation/SP1/taxon_best_probes_summary.csv
+    jobid: 4
+    wildcards: design_id=SP1
+    resources: tmpdir=/tmp
+
+[Tue Feb 22 20:08:51 2022]
+Finished job 4.
+6 of 10 steps (60%) done
+Select jobs to execute...
+
+[Tue Feb 22 20:08:51 2022]
+rule generate_full_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/simulation/SP1/taxon_best_probes.csv
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/SP1/SP1_full_length_probes_sequences.txt, /home/miri/Desktop/HIPRFISH/data/simulation/SP1/SP1_full_length_blocking_probes_sequences.txt, /home/miri/Desktop/HIPRFISH/data/simulation/SP1/SP1_full_length_helper_probes_sequences.txt, /home/miri/Desktop/HIPRFISH/data/simulation/SP1/SP1_full_length_probes_summary.txt
+    jobid: 3
+    wildcards: design_id=SP1
+    resources: tmpdir=/tmp
+
+[Tue Feb 22 20:11:10 2022]
+Error in rule generate_full_probes:
+    jobid: 3
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/SP1/SP1_full_length_probes_sequences.txt, /home/miri/Desktop/HIPRFISH/data/simulation/SP1/SP1_full_length_blocking_probes_sequences.txt, /home/miri/Desktop/HIPRFISH/data/simulation/SP1/SP1_full_length_helper_probes_sequences.txt, /home/miri/Desktop/HIPRFISH/data/simulation/SP1/SP1_full_length_probes_summary.txt
+    shell:
+        python3 /home/miri/Desktop/HIPRFISH/hiprfish_code/probe-design/hiprfish-probe-design-consensus/hiprfish_generate_full_probes.py /home/miri/Desktop/HIPRFISH/data/simulation/SP1 /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/consensus /home/miri/Desktop/HIPRFISH/data/utilities/mock_community/genus/s_0.1/consensus /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/blast /home/miri/Desktop/HIPRFISH/data/mock_community/input/mock_community.oriented.fasta 0.99 14 15 -ps C -t genus -bs MostSimple -hr 14 -tc white
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job generate_full_probes since they might be corrupted:
+/home/miri/Desktop/HIPRFISH/data/simulation/SP1/SP1_full_length_probes_sequences.txt, /home/miri/Desktop/HIPRFISH/data/simulation/SP1/SP1_full_length_blocking_probes_sequences.txt, /home/miri/Desktop/HIPRFISH/data/simulation/SP1/SP1_full_length_helper_probes_sequences.txt
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/miri/Desktop/HIPRFISH/hiprfish_code/probe-design/hiprfish-probe-design-consensus/.snakemake/log/2022-02-22T200112.584988.snakemake.log

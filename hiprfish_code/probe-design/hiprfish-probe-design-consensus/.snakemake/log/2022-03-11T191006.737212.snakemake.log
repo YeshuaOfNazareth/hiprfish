@@ -1,0 +1,10 @@
+FileNotFoundError in line 20 of /home/miri/Desktop/HIPRFISH (probes done)/hiprfish_code/probe-design/hiprfish-probe-design-consensus/Snakefile:
+[Errno 2] No such file or directory: '/home/miri/Desktop/HIPRFISH/simulation_table/simulation_table_mock.csv'
+  File "/home/miri/Desktop/HIPRFISH (probes done)/hiprfish_code/probe-design/hiprfish-probe-design-consensus/Snakefile", line 267, in <module>
+  File "/home/miri/Desktop/HIPRFISH (probes done)/hiprfish_code/probe-design/hiprfish-probe-design-consensus/Snakefile", line 20, in get_simulation_list
+  File "/home/miri/miniconda3/envs/hiprfish/lib/python3.8/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+  File "/home/miri/miniconda3/envs/hiprfish/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 680, in read_csv
+  File "/home/miri/miniconda3/envs/hiprfish/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 575, in _read
+  File "/home/miri/miniconda3/envs/hiprfish/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 933, in __init__
+  File "/home/miri/miniconda3/envs/hiprfish/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1217, in _make_engine
+  File "/home/miri/miniconda3/envs/hiprfish/lib/python3.8/site-packages/pandas/io/common.py", line 789, in get_handle

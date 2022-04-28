@@ -1,0 +1,404 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                                   count    min threads    max threads
+----------------------------------  -------  -------------  -------------
+add_spacers                               1              1              1
+all                                       1              1              1
+blast_probes                              1              1              1
+collect_probe_coverage_results            1              1              1
+collect_selected_probe_information        1              1              1
+combine_full_length_sequences             1              1              1
+design_probes                             1              1              1
+evaluate_taxon_probes                     1              1              1
+generate_full_probes                      1              1              1
+select_taxon_probes                       1              1              1
+total                                    10              1              1
+
+Select jobs to execute...
+
+[Fri Apr  1 01:24:17 2022]
+rule design_probes:
+    input: /home/yeshua/Desktop/hiprfish/data/mock_community/input/mock_community.fasta, /home/yeshua/Desktop/hiprfish/data/mock_community
+    output: /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/primer3/{*}_consensus.int (dynamic)
+    jobid: 8
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1
+    resources: tmpdir=/tmp
+
+Subsequent jobs will be added dynamically depending on the output of this job
+[Fri Apr  1 01:24:40 2022]
+Finished job 8.
+1 of 10 steps (10%) done
+Dynamically updating jobs
+Select jobs to execute...
+
+[Fri Apr  1 01:24:40 2022]
+rule blast_probes:
+    input: /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/primer3/1309_consensus.int
+    output: /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/primer3/1309.probe.blast.complete.txt
+    jobid: 19
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=1309
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  1 01:24:40 2022]
+rule blast_probes:
+    input: /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/primer3/1310_consensus.int
+    output: /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/primer3/1310.probe.blast.complete.txt
+    jobid: 35
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=1310
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  1 01:24:40 2022]
+rule blast_probes:
+    input: /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/primer3/1314_consensus.int
+    output: /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/primer3/1314.probe.blast.complete.txt
+    jobid: 27
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=1314
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  1 01:24:40 2022]
+rule blast_probes:
+    input: /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/primer3/1328_consensus.int
+    output: /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/primer3/1328.probe.blast.complete.txt
+    jobid: 31
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=1328
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  1 01:24:40 2022]
+rule blast_probes:
+    input: /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/primer3/1311_consensus.int
+    output: /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/primer3/1311.probe.blast.complete.txt
+    jobid: 23
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=1311
+    resources: tmpdir=/tmp
+
+
+[Fri Apr  1 01:24:40 2022]
+rule blast_probes:
+    input: /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/primer3/1317_consensus.int
+    output: /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/primer3/1317.probe.blast.complete.txt
+    jobid: 15
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=1317
+    resources: tmpdir=/tmp
+
+[Fri Apr  1 01:28:24 2022]
+Finished job 27.
+2 of 30 steps (7%) done
+Select jobs to execute...
+
+[Fri Apr  1 01:28:24 2022]
+rule evaluate_taxon_probes:
+    input: /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/primer3/1314_consensus.int, /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/primer3/1314.probe.blast.complete.txt
+    output: /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/blast/1314.probe.evaluation.complete.txt
+    jobid: 26
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=1314
+    resources: tmpdir=/tmp
+
+[Fri Apr  1 01:28:26 2022]
+Finished job 19.
+3 of 30 steps (10%) done
+Select jobs to execute...
+
+[Fri Apr  1 01:28:26 2022]
+rule evaluate_taxon_probes:
+    input: /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/primer3/1309_consensus.int, /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/primer3/1309.probe.blast.complete.txt
+    output: /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/blast/1309.probe.evaluation.complete.txt
+    jobid: 18
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=1309
+    resources: tmpdir=/tmp
+
+[Fri Apr  1 01:28:27 2022]
+Finished job 23.
+4 of 30 steps (13%) done
+Select jobs to execute...
+
+[Fri Apr  1 01:28:27 2022]
+rule evaluate_taxon_probes:
+    input: /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/primer3/1311_consensus.int, /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/primer3/1311.probe.blast.complete.txt
+    output: /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/blast/1311.probe.evaluation.complete.txt
+    jobid: 22
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=1311
+    resources: tmpdir=/tmp
+
+[Fri Apr  1 01:28:27 2022]
+Finished job 31.
+5 of 30 steps (17%) done
+Select jobs to execute...
+
+[Fri Apr  1 01:28:27 2022]
+rule evaluate_taxon_probes:
+    input: /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/primer3/1328_consensus.int, /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/primer3/1328.probe.blast.complete.txt
+    output: /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/blast/1328.probe.evaluation.complete.txt
+    jobid: 30
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=1328
+    resources: tmpdir=/tmp
+
+[Fri Apr  1 01:28:29 2022]
+Finished job 15.
+6 of 30 steps (20%) done
+Select jobs to execute...
+
+[Fri Apr  1 01:28:29 2022]
+rule evaluate_taxon_probes:
+    input: /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/primer3/1317_consensus.int, /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/primer3/1317.probe.blast.complete.txt
+    output: /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/blast/1317.probe.evaluation.complete.txt
+    jobid: 14
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=1317
+    resources: tmpdir=/tmp
+
+[Fri Apr  1 01:28:30 2022]
+Finished job 35.
+7 of 30 steps (23%) done
+Select jobs to execute...
+
+[Fri Apr  1 01:28:30 2022]
+rule evaluate_taxon_probes:
+    input: /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/primer3/1310_consensus.int, /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/primer3/1310.probe.blast.complete.txt
+    output: /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/blast/1310.probe.evaluation.complete.txt
+    jobid: 34
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=1310
+    resources: tmpdir=/tmp
+
+[Fri Apr  1 01:32:17 2022]
+Finished job 30.
+8 of 30 steps (27%) done
+Select jobs to execute...
+
+[Fri Apr  1 01:32:17 2022]
+rule select_taxon_probes:
+    input: /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/blast/1328.probe.evaluation.complete.txt
+    output: /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/1328_probe_selection.csv
+    jobid: 29
+    wildcards: design_id=DSGN0000, taxon=1328
+    resources: tmpdir=/tmp
+
+[Fri Apr  1 01:32:22 2022]
+Finished job 34.
+9 of 30 steps (30%) done
+Select jobs to execute...
+
+[Fri Apr  1 01:32:22 2022]
+rule select_taxon_probes:
+    input: /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/blast/1310.probe.evaluation.complete.txt
+    output: /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/1310_probe_selection.csv
+    jobid: 33
+    wildcards: design_id=DSGN0000, taxon=1310
+    resources: tmpdir=/tmp
+
+[Fri Apr  1 01:32:23 2022]
+Finished job 22.
+10 of 30 steps (33%) done
+Select jobs to execute...
+
+[Fri Apr  1 01:32:23 2022]
+rule select_taxon_probes:
+    input: /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/blast/1311.probe.evaluation.complete.txt
+    output: /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/1311_probe_selection.csv
+    jobid: 21
+    wildcards: design_id=DSGN0000, taxon=1311
+    resources: tmpdir=/tmp
+
+[Fri Apr  1 01:32:25 2022]
+Finished job 26.
+11 of 30 steps (37%) done
+Select jobs to execute...
+
+[Fri Apr  1 01:32:25 2022]
+rule select_taxon_probes:
+    input: /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/blast/1314.probe.evaluation.complete.txt
+    output: /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/1314_probe_selection.csv
+    jobid: 25
+    wildcards: design_id=DSGN0000, taxon=1314
+    resources: tmpdir=/tmp
+
+[Fri Apr  1 01:32:30 2022]
+Finished job 14.
+12 of 30 steps (40%) done
+Select jobs to execute...
+
+[Fri Apr  1 01:32:30 2022]
+rule select_taxon_probes:
+    input: /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/blast/1317.probe.evaluation.complete.txt
+    output: /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/1317_probe_selection.csv
+    jobid: 13
+    wildcards: design_id=DSGN0000, taxon=1317
+    resources: tmpdir=/tmp
+
+[Fri Apr  1 01:32:32 2022]
+Finished job 18.
+13 of 30 steps (43%) done
+Select jobs to execute...
+
+[Fri Apr  1 01:32:32 2022]
+rule select_taxon_probes:
+    input: /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/blast/1309.probe.evaluation.complete.txt
+    output: /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/1309_probe_selection.csv
+    jobid: 17
+    wildcards: design_id=DSGN0000, taxon=1309
+    resources: tmpdir=/tmp
+
+[Fri Apr  1 01:36:20 2022]
+Finished job 29.
+14 of 30 steps (47%) done
+Select jobs to execute...
+
+[Fri Apr  1 01:36:20 2022]
+rule add_spacers:
+    input: /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/1328_probe_selection.csv
+    output: /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/1328_probe_selection_sa.csv
+    jobid: 28
+    wildcards: design_id=DSGN0000, taxon=1328
+    resources: tmpdir=/tmp
+
+[Fri Apr  1 01:36:22 2022]
+Finished job 28.
+15 of 30 steps (50%) done
+[Fri Apr  1 01:36:27 2022]
+Finished job 33.
+16 of 30 steps (53%) done
+Select jobs to execute...
+
+[Fri Apr  1 01:36:27 2022]
+rule add_spacers:
+    input: /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/1310_probe_selection.csv
+    output: /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/1310_probe_selection_sa.csv
+    jobid: 32
+    wildcards: design_id=DSGN0000, taxon=1310
+    resources: tmpdir=/tmp
+
+[Fri Apr  1 01:36:28 2022]
+Finished job 32.
+17 of 30 steps (57%) done
+[Fri Apr  1 01:36:33 2022]
+Finished job 21.
+18 of 30 steps (60%) done
+Select jobs to execute...
+
+[Fri Apr  1 01:36:33 2022]
+rule add_spacers:
+    input: /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/1311_probe_selection.csv
+    output: /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/1311_probe_selection_sa.csv
+    jobid: 20
+    wildcards: design_id=DSGN0000, taxon=1311
+    resources: tmpdir=/tmp
+
+[Fri Apr  1 01:36:34 2022]
+Finished job 20.
+19 of 30 steps (63%) done
+[Fri Apr  1 01:36:35 2022]
+Finished job 25.
+20 of 30 steps (67%) done
+Select jobs to execute...
+
+[Fri Apr  1 01:36:35 2022]
+rule add_spacers:
+    input: /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/1314_probe_selection.csv
+    output: /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/1314_probe_selection_sa.csv
+    jobid: 24
+    wildcards: design_id=DSGN0000, taxon=1314
+    resources: tmpdir=/tmp
+
+[Fri Apr  1 01:36:36 2022]
+Finished job 24.
+21 of 30 steps (70%) done
+[Fri Apr  1 01:36:38 2022]
+Finished job 17.
+22 of 30 steps (73%) done
+Select jobs to execute...
+
+[Fri Apr  1 01:36:38 2022]
+rule add_spacers:
+    input: /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/1309_probe_selection.csv
+    output: /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/1309_probe_selection_sa.csv
+    jobid: 16
+    wildcards: design_id=DSGN0000, taxon=1309
+    resources: tmpdir=/tmp
+
+[Fri Apr  1 01:36:39 2022]
+Finished job 16.
+23 of 30 steps (77%) done
+[Fri Apr  1 01:36:41 2022]
+Finished job 13.
+24 of 30 steps (80%) done
+Select jobs to execute...
+
+[Fri Apr  1 01:36:41 2022]
+rule add_spacers:
+    input: /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/1317_probe_selection.csv
+    output: /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/1317_probe_selection_sa.csv
+    jobid: 12
+    wildcards: design_id=DSGN0000, taxon=1317
+    resources: tmpdir=/tmp
+
+[Fri Apr  1 01:36:42 2022]
+Finished job 12.
+25 of 30 steps (83%) done
+Select jobs to execute...
+
+[Fri Apr  1 01:36:42 2022]
+rule collect_selected_probe_information:
+    input: /home/yeshua/Desktop/hiprfish/simulation_table/simulation_table_example.csv, /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000, /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/1317_probe_selection_sa.csv, /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/1309_probe_selection_sa.csv, /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/1311_probe_selection_sa.csv, /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/1314_probe_selection_sa.csv, /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/1328_probe_selection_sa.csv, /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/1310_probe_selection_sa.csv
+    output: /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/taxon_best_probes.csv, /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/taxon_best_probes_filtered.csv, /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/taxon_best_probes_summary.csv
+    jobid: 4
+    wildcards: design_id=DSGN0000
+    resources: tmpdir=/tmp
+
+[Fri Apr  1 01:36:42 2022]
+Finished job 4.
+26 of 30 steps (87%) done
+Select jobs to execute...
+
+[Fri Apr  1 01:36:42 2022]
+rule generate_full_probes:
+    input: /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/taxon_best_probes.csv
+    output: /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/DSGN0000_full_length_probes_sequences.txt, /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/DSGN0000_full_length_blocking_probes_sequences.txt, /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/DSGN0000_full_length_helper_probes_sequences.txt, /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/DSGN0000_full_length_probes_summary.txt
+    jobid: 3
+    wildcards: design_id=DSGN0000
+    resources: tmpdir=/tmp
+
+[Fri Apr  1 01:39:28 2022]
+Finished job 3.
+27 of 30 steps (90%) done
+Select jobs to execute...
+
+[Fri Apr  1 01:39:28 2022]
+rule combine_full_length_sequences:
+    input: /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/DSGN0000_full_length_probes_sequences.txt, /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/DSGN0000_full_length_blocking_probes_sequences.txt, /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/DSGN0000_full_length_helper_probes_sequences.txt
+    output: /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/DSGN0000_complex_oligo_pool.txt
+    jobid: 2
+    wildcards: design_id=DSGN0000
+    resources: tmpdir=/tmp
+
+[Fri Apr  1 01:39:28 2022]
+Finished job 2.
+28 of 30 steps (93%) done
+Select jobs to execute...
+
+[Fri Apr  1 01:39:28 2022]
+rule collect_probe_coverage_results:
+    input: /home/yeshua/Desktop/hiprfish/data/simulation/DSGN0000/DSGN0000_complex_oligo_pool.txt, /home/yeshua/Desktop/hiprfish/simulation_table/simulation_table_example.csv, /home/yeshua/Desktop/hiprfish/data
+    output: /home/yeshua/Desktop/hiprfish/simulation_table/simulation_table_example_results.csv
+    jobid: 1
+    resources: tmpdir=/tmp
+
+[Fri Apr  1 01:39:28 2022]
+Finished job 1.
+29 of 30 steps (97%) done
+Select jobs to execute...
+
+[Fri Apr  1 01:39:28 2022]
+localrule all:
+    input: /home/yeshua/Desktop/hiprfish/simulation_table/simulation_table_example_results.csv
+    jobid: 0
+    resources: tmpdir=/tmp
+
+[Fri Apr  1 01:39:28 2022]
+Finished job 0.
+30 of 30 steps (100%) done
+Complete log: .snakemake/log/2022-04-01T012416.923257.snakemake.log

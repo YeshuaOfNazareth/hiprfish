@@ -1,0 +1,41 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                                   count    min threads    max threads
+----------------------------------  -------  -------------  -------------
+add_spacers                               1              1              1
+all                                       1              1              1
+blast_probes                              1              1              1
+collect_probe_coverage_results            1              1              1
+collect_selected_probe_information        1              1              1
+combine_full_length_sequences             1              1              1
+design_probes                             1              1              1
+evaluate_taxon_probes                     1              1              1
+generate_full_probes                      1              1              1
+select_taxon_probes                       1              1              1
+total                                    10              1              1
+
+Select jobs to execute...
+
+[Thu Mar 31 23:21:27 2022]
+rule design_probes:
+    input: /home/yeshua/Desktop/hiprfish/data/mock_community/input/mock_community.fasta, /home/yeshua/Desktop/hiprfish/data/mock_community
+    output: /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/primer3/{*}_consensus.int (dynamic)
+    jobid: 8
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1
+    resources: tmpdir=/tmp
+
+Subsequent jobs will be added dynamically depending on the output of this job
+[Thu Mar 31 23:21:28 2022]
+Error in rule design_probes:
+    jobid: 8
+    output: /home/yeshua/Desktop/hiprfish/data/mock_community/species/s_0.1/primer3/{*}_consensus.int (dynamic)
+    shell:
+        python3 /home/yeshua/Desktop/hiprfish/hiprfish_code/probe-design/hiprfish-probe-design-consensus/hiprfish_design_probes.py /home/yeshua/Desktop/hiprfish/data/mock_community/input/mock_community.fasta /home/yeshua/Desktop/hiprfish/data/mock_community primer3_core /home/yeshua/Desktop/hiprfish/primer3_config/primer3_config /home/yeshua/Desktop/hiprfish/usearch11.0.667_i86linux32 -db /home/yeshua/Desktop/hiprfish/RNA/16S_ribosomal_RNA/16S_ribosomal_RNA -t species -s 0.1
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2022-03-31T232127.386965.snakemake.log

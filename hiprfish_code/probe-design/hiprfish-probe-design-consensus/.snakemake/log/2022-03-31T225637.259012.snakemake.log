@@ -1,0 +1,23 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                               count    min threads    max threads
+------------------------------  -------  -------------  -------------
+all                                   1              1              1
+collect_probe_coverage_results        1              1              1
+combine_full_length_sequences         1              1              1
+generate_full_probes                  1              1              1
+total                                 4              1              1
+
+Select jobs to execute...
+
+[Thu Mar 31 22:56:37 2022]
+rule generate_full_probes:
+    input: /home/yeshua/Desktop/HIPRFISH/data/simulation/DSGN0000/taxon_best_probes.csv
+    output: /home/yeshua/Desktop/HIPRFISH/data/simulation/DSGN0000/DSGN0000_full_length_probes_sequences.txt, /home/yeshua/Desktop/HIPRFISH/data/simulation/DSGN0000/DSGN0000_full_length_blocking_probes_sequences.txt, /home/yeshua/Desktop/HIPRFISH/data/simulation/DSGN0000/DSGN0000_full_length_helper_probes_sequences.txt, /home/yeshua/Desktop/HIPRFISH/data/simulation/DSGN0000/DSGN0000_full_length_probes_summary.txt
+    jobid: 3
+    wildcards: design_id=DSGN0000
+    resources: tmpdir=/tmp
+

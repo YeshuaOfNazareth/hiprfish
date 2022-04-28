@@ -1,0 +1,36 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                               count    min threads    max threads
+------------------------------  -------  -------------  -------------
+all                                   1              1              1
+collect_probe_coverage_results        1              1              1
+combine_full_length_sequences         1              1              1
+generate_full_probes                  1              1              1
+total                                 4              1              1
+
+Select jobs to execute...
+
+[Thu Mar 31 22:46:56 2022]
+rule generate_full_probes:
+    input: /home/yeshua/Desktop/HIPRFISH/data/simulation/DSGN0000/taxon_best_probes.csv
+    output: /home/yeshua/Desktop/HIPRFISH/data/simulation/DSGN0000/DSGN0000_full_length_probes_sequences.txt, /home/yeshua/Desktop/HIPRFISH/data/simulation/DSGN0000/DSGN0000_full_length_blocking_probes_sequences.txt, /home/yeshua/Desktop/HIPRFISH/data/simulation/DSGN0000/DSGN0000_full_length_helper_probes_sequences.txt, /home/yeshua/Desktop/HIPRFISH/data/simulation/DSGN0000/DSGN0000_full_length_probes_summary.txt
+    jobid: 3
+    wildcards: design_id=DSGN0000
+    resources: tmpdir=/tmp
+
+[Thu Mar 31 22:49:07 2022]
+Error in rule generate_full_probes:
+    jobid: 3
+    output: /home/yeshua/Desktop/HIPRFISH/data/simulation/DSGN0000/DSGN0000_full_length_probes_sequences.txt, /home/yeshua/Desktop/HIPRFISH/data/simulation/DSGN0000/DSGN0000_full_length_blocking_probes_sequences.txt, /home/yeshua/Desktop/HIPRFISH/data/simulation/DSGN0000/DSGN0000_full_length_helper_probes_sequences.txt, /home/yeshua/Desktop/HIPRFISH/data/simulation/DSGN0000/DSGN0000_full_length_probes_summary.txt
+    shell:
+        python3 /home/yeshua/Desktop/hiprfish/hiprfish_code/probe-design/hiprfish-probe-design-consensus/hiprfish_generate_full_probes.py /home/yeshua/Desktop/HIPRFISH/data/simulation/DSGN0000 /home/yeshua/Desktop/HIPRFISH/data/mock_community/species/s_0.1/consensus /home/yeshua/Desktop/HIPRFISH/data/utilities/mock_community/species/s_0.1/consensus /home/yeshua/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast /home/yeshua/Desktop/HIPRFISH/data/mock_community/input/mock_community.oriented.fasta 0.99 14 15 -ps C -t species -bs MostSimple -hr 14 -tc white
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job generate_full_probes since they might be corrupted:
+/home/yeshua/Desktop/HIPRFISH/data/simulation/DSGN0000/DSGN0000_full_length_probes_sequences.txt, /home/yeshua/Desktop/HIPRFISH/data/simulation/DSGN0000/DSGN0000_full_length_blocking_probes_sequences.txt, /home/yeshua/Desktop/HIPRFISH/data/simulation/DSGN0000/DSGN0000_full_length_helper_probes_sequences.txt
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2022-03-31T224656.514086.snakemake.log

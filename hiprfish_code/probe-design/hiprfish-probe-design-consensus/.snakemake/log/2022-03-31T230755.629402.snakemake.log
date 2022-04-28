@@ -1,0 +1,3 @@
+KeyError in line 260 of /home/yeshua/Desktop/hiprfish/hiprfish_code/probe-design/hiprfish-probe-design-consensus/Snakefile:
+'__default__'
+  File "/home/yeshua/Desktop/hiprfish/hiprfish_code/probe-design/hiprfish-probe-design-consensus/Snakefile", line 260, in <module>

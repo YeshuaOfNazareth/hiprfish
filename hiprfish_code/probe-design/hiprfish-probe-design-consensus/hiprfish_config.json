@@ -1,0 +1,50 @@
+{
+
+    "__default__" :
+
+    {
+
+        "SCRIPTS_PATH" : "/home/yeshua/Desktop/hiprfish/hiprfish_code/probe-design/hiprfish-probe-design-consensus",
+
+        "DATA_DIR" : "/home/yeshua/Desktop/hiprfish/data"
+
+    },
+
+    "blast":
+
+    {
+
+        "16s_db" : "/home/yeshua/Desktop/hiprfish/RNA/16S_ribosomal_RNA/16S_ribosomal_RNA"
+
+    },
+
+    "primer3":
+
+    {
+
+        "primer3_exec_dir" : "/home/yeshua/primer3/src/primer3_core",
+
+        "primer3_config_dir" : "/home/yeshua/Desktop/hiprfish/primer3_config/primer3_config"
+
+    },
+
+    "usearch":
+
+    {
+
+        "usearch_dir" : "/home/yeshua/Desktop/hiprfish/usearch11.0.667_i86linux32"
+
+    },
+
+    "simulations" :
+
+    {
+
+        "simulation_table" : "/home/yeshua/Desktop/hiprfish/simulation_table/simulation_table_example.csv"
+
+        
+
+    }
+
+}
+

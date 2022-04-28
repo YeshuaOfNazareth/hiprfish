@@ -1,0 +1,71 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                                   count    min threads    max threads
+----------------------------------  -------  -------------  -------------
+add_spacers                               3              1              1
+all                                       1              1              1
+collect_probe_coverage_results            1              1              1
+collect_selected_probe_information        1              1              1
+combine_full_length_sequences             1              1              1
+generate_full_probes                      1              1              1
+select_taxon_probes                       3              1              1
+total                                    11              1              1
+
+Select jobs to execute...
+
+[Mon Mar 28 23:59:42 2022]
+rule select_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast/2047.probe.evaluation.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/SP1/2047_probe_selection.csv
+    jobid: 13
+    wildcards: design_id=SP1, taxon=2047
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 28 23:59:42 2022]
+rule select_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast/172042.probe.evaluation.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/SP1/172042_probe_selection.csv
+    jobid: 17
+    wildcards: design_id=SP1, taxon=172042
+    resources: tmpdir=/tmp
+
+
+[Mon Mar 28 23:59:42 2022]
+rule select_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast/43675.probe.evaluation.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/SP1/43675_probe_selection.csv
+    jobid: 21
+    wildcards: design_id=SP1, taxon=43675
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 00:02:29 2022]
+Error in rule select_taxon_probes:
+    jobid: 13
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/SP1/2047_probe_selection.csv
+    shell:
+        python3 /home/miri/Desktop/HIPRFISH/hiprfish_code/probe-design/hiprfish-probe-design-consensus/hiprfish_select_probes.py /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast/2047.probe.evaluation.complete.txt SP1 /home/miri/Desktop/HIPRFISH/data/simulation/SP1/2047_probe_selection.csv -c AllSpecific -t species -o F -s 0.1 -tmin 55 -tmax 65 -m 14 -tpn 1 -freqll 0.0 -gc 40 -bot 0.99 -bt 27 -sod 390 -dnaconc 5 -mt 60
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Tue Mar 29 00:02:31 2022]
+Error in rule select_taxon_probes:
+    jobid: 21
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/SP1/43675_probe_selection.csv
+    shell:
+        python3 /home/miri/Desktop/HIPRFISH/hiprfish_code/probe-design/hiprfish-probe-design-consensus/hiprfish_select_probes.py /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast/43675.probe.evaluation.complete.txt SP1 /home/miri/Desktop/HIPRFISH/data/simulation/SP1/43675_probe_selection.csv -c AllSpecific -t species -o F -s 0.1 -tmin 55 -tmax 65 -m 14 -tpn 1 -freqll 0.0 -gc 40 -bot 0.99 -bt 27 -sod 390 -dnaconc 5 -mt 60
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Tue Mar 29 00:02:47 2022]
+Error in rule select_taxon_probes:
+    jobid: 17
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/SP1/172042_probe_selection.csv
+    shell:
+        python3 /home/miri/Desktop/HIPRFISH/hiprfish_code/probe-design/hiprfish-probe-design-consensus/hiprfish_select_probes.py /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast/172042.probe.evaluation.complete.txt SP1 /home/miri/Desktop/HIPRFISH/data/simulation/SP1/172042_probe_selection.csv -c AllSpecific -t species -o F -s 0.1 -tmin 55 -tmax 65 -m 14 -tpn 1 -freqll 0.0 -gc 40 -bot 0.99 -bt 27 -sod 390 -dnaconc 5 -mt 60
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/miri/Desktop/HIPRFISH/hiprfish_code/probe-design/hiprfish-probe-design-consensus/.snakemake/log/2022-03-28T235940.499233.snakemake.log

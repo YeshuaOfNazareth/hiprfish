@@ -1,0 +1,1203 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                                   count    min threads    max threads
+----------------------------------  -------  -------------  -------------
+add_spacers                               2              1              1
+all                                       1              1              1
+blast_probes                              2              1              1
+collect_probe_coverage_results            1              1              1
+collect_selected_probe_information        2              1              1
+combine_full_length_sequences             2              1              1
+design_probes                             2              1              1
+evaluate_taxon_probes                     2              1              1
+generate_full_probes                      2              1              1
+select_taxon_probes                       2              1              1
+total                                    18              1              1
+
+Select jobs to execute...
+
+[Tue Mar 29 02:26:57 2022]
+rule design_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/input/mock_community.fasta, /home/miri/Desktop/HIPRFISH/data/mock_community
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/{*}_consensus.int (dynamic)
+    jobid: 16
+    wildcards: sample=mock_community, target_rank=genus, similarity=0.1
+    resources: tmpdir=/tmp
+
+Subsequent jobs will be added dynamically depending on the output of this job
+
+[Tue Mar 29 02:26:57 2022]
+rule design_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/input/mock_community.fasta, /home/miri/Desktop/HIPRFISH/data/mock_community
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/{*}_consensus.int (dynamic)
+    jobid: 8
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1
+    resources: tmpdir=/tmp
+
+Subsequent jobs will be added dynamically depending on the output of this job
+[Tue Mar 29 02:27:44 2022]
+Finished job 16.
+1 of 18 steps (6%) done
+Dynamically updating jobs
+Select jobs to execute...
+
+[Tue Mar 29 02:27:49 2022]
+rule blast_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/2767842_consensus.int
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/2767842.probe.blast.complete.txt
+    jobid: 23
+    wildcards: sample=mock_community, target_rank=genus, similarity=0.1, taxon=2767842
+    resources: tmpdir=/tmp
+
+
+[Tue Mar 29 02:27:49 2022]
+rule blast_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/469_consensus.int
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/469.probe.blast.complete.txt
+    jobid: 35
+    wildcards: sample=mock_community, target_rank=genus, similarity=0.1, taxon=469
+    resources: tmpdir=/tmp
+
+
+[Tue Mar 29 02:27:49 2022]
+rule blast_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/283_consensus.int
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/283.probe.blast.complete.txt
+    jobid: 39
+    wildcards: sample=mock_community, target_rank=genus, similarity=0.1, taxon=283
+    resources: tmpdir=/tmp
+
+
+[Tue Mar 29 02:27:49 2022]
+rule blast_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/2767886_consensus.int
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/2767886.probe.blast.complete.txt
+    jobid: 31
+    wildcards: sample=mock_community, target_rank=genus, similarity=0.1, taxon=2767886
+    resources: tmpdir=/tmp
+
+
+[Tue Mar 29 02:27:49 2022]
+rule blast_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/338_consensus.int
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/338.probe.blast.complete.txt
+    jobid: 27
+    wildcards: sample=mock_community, target_rank=genus, similarity=0.1, taxon=338
+    resources: tmpdir=/tmp
+
+
+[Tue Mar 29 02:27:49 2022]
+rule blast_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/1350_consensus.int
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/1350.probe.blast.complete.txt
+    jobid: 43
+    wildcards: sample=mock_community, target_rank=genus, similarity=0.1, taxon=1350
+    resources: tmpdir=/tmp
+
+
+[Tue Mar 29 02:27:49 2022]
+rule blast_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/561_consensus.int
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/561.probe.blast.complete.txt
+    jobid: 55
+    wildcards: sample=mock_community, target_rank=genus, similarity=0.1, taxon=561
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 02:27:59 2022]
+Finished job 8.
+2 of 54 steps (4%) done
+Dynamically updating jobs
+Select jobs to execute...
+
+[Tue Mar 29 02:28:01 2022]
+rule blast_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/1590_consensus.int
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/1590.probe.blast.complete.txt
+    jobid: 97
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=1590
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 02:33:38 2022]
+Finished job 31.
+3 of 94 steps (3%) done
+Select jobs to execute...
+
+[Tue Mar 29 02:33:38 2022]
+rule blast_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/1353_consensus.int
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/1353.probe.blast.complete.txt
+    jobid: 73
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=1353
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 02:33:40 2022]
+Finished job 55.
+4 of 94 steps (4%) done
+Select jobs to execute...
+
+[Tue Mar 29 02:33:40 2022]
+rule blast_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/56459_consensus.int
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/56459.probe.blast.complete.txt
+    jobid: 101
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=56459
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 02:33:48 2022]
+Finished job 39.
+5 of 94 steps (5%) done
+Select jobs to execute...
+
+[Tue Mar 29 02:33:48 2022]
+rule blast_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/108981_consensus.int
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/108981.probe.blast.complete.txt
+    jobid: 81
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=108981
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 02:33:54 2022]
+Finished job 35.
+6 of 94 steps (6%) done
+Select jobs to execute...
+
+[Tue Mar 29 02:33:54 2022]
+rule evaluate_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/469_consensus.int, /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/469.probe.blast.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/blast/469.probe.evaluation.complete.txt
+    jobid: 34
+    wildcards: sample=mock_community, target_rank=genus, similarity=0.1, taxon=469
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 02:33:57 2022]
+Finished job 27.
+7 of 94 steps (7%) done
+Select jobs to execute...
+
+[Tue Mar 29 02:33:57 2022]
+rule evaluate_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/338_consensus.int, /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/338.probe.blast.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/blast/338.probe.evaluation.complete.txt
+    jobid: 26
+    wildcards: sample=mock_community, target_rank=genus, similarity=0.1, taxon=338
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 02:33:57 2022]
+Finished job 43.
+8 of 94 steps (9%) done
+Select jobs to execute...
+
+[Tue Mar 29 02:33:57 2022]
+rule evaluate_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/1350_consensus.int, /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/1350.probe.blast.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/blast/1350.probe.evaluation.complete.txt
+    jobid: 42
+    wildcards: sample=mock_community, target_rank=genus, similarity=0.1, taxon=1350
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 02:33:58 2022]
+Finished job 23.
+9 of 94 steps (10%) done
+Select jobs to execute...
+
+[Tue Mar 29 02:33:58 2022]
+rule evaluate_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/2767842_consensus.int, /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/2767842.probe.blast.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/blast/2767842.probe.evaluation.complete.txt
+    jobid: 22
+    wildcards: sample=mock_community, target_rank=genus, similarity=0.1, taxon=2767842
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 02:34:06 2022]
+Finished job 97.
+10 of 94 steps (11%) done
+Select jobs to execute...
+
+[Tue Mar 29 02:34:06 2022]
+rule evaluate_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/1590_consensus.int, /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/1590.probe.blast.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast/1590.probe.evaluation.complete.txt
+    jobid: 96
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=1590
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 02:41:05 2022]
+Finished job 42.
+11 of 94 steps (12%) done
+Select jobs to execute...
+
+[Tue Mar 29 02:41:05 2022]
+rule evaluate_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/283_consensus.int, /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/283.probe.blast.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/blast/283.probe.evaluation.complete.txt
+    jobid: 38
+    wildcards: sample=mock_community, target_rank=genus, similarity=0.1, taxon=283
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 02:41:08 2022]
+Finished job 34.
+12 of 94 steps (13%) done
+Select jobs to execute...
+
+[Tue Mar 29 02:41:08 2022]
+rule blast_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/285_consensus.int
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/285.probe.blast.complete.txt
+    jobid: 69
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=285
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 02:41:09 2022]
+Finished job 26.
+13 of 94 steps (14%) done
+Select jobs to execute...
+
+[Tue Mar 29 02:41:09 2022]
+rule evaluate_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/2767886_consensus.int, /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/2767886.probe.blast.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/blast/2767886.probe.evaluation.complete.txt
+    jobid: 30
+    wildcards: sample=mock_community, target_rank=genus, similarity=0.1, taxon=2767886
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 02:41:17 2022]
+Finished job 96.
+14 of 94 steps (15%) done
+Select jobs to execute...
+
+[Tue Mar 29 02:41:17 2022]
+rule blast_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/1580_consensus.int
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/1580.probe.blast.complete.txt
+    jobid: 89
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=1580
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 02:41:18 2022]
+Finished job 22.
+15 of 94 steps (16%) done
+Select jobs to execute...
+
+[Tue Mar 29 02:41:18 2022]
+rule evaluate_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/561_consensus.int, /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/561.probe.blast.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/blast/561.probe.evaluation.complete.txt
+    jobid: 54
+    wildcards: sample=mock_community, target_rank=genus, similarity=0.1, taxon=561
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 02:43:00 2022]
+Finished job 73.
+16 of 94 steps (17%) done
+Select jobs to execute...
+
+[Tue Mar 29 02:43:01 2022]
+rule evaluate_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/1353_consensus.int, /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/1353.probe.blast.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast/1353.probe.evaluation.complete.txt
+    jobid: 72
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=1353
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 02:43:01 2022]
+Finished job 101.
+17 of 94 steps (18%) done
+Select jobs to execute...
+
+[Tue Mar 29 02:43:01 2022]
+rule evaluate_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/56459_consensus.int, /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/56459.probe.blast.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast/56459.probe.evaluation.complete.txt
+    jobid: 100
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=56459
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 02:43:08 2022]
+Finished job 81.
+18 of 94 steps (19%) done
+Select jobs to execute...
+
+[Tue Mar 29 02:43:08 2022]
+rule evaluate_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/108981_consensus.int, /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/108981.probe.blast.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast/108981.probe.evaluation.complete.txt
+    jobid: 80
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=108981
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 02:51:46 2022]
+Finished job 54.
+19 of 94 steps (20%) done
+Select jobs to execute...
+
+[Tue Mar 29 02:51:46 2022]
+rule blast_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/564_consensus.int
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/564.probe.blast.complete.txt
+    jobid: 65
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=564
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 02:51:47 2022]
+Finished job 30.
+20 of 94 steps (21%) done
+Select jobs to execute...
+
+[Tue Mar 29 02:51:47 2022]
+rule blast_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/662_consensus.int
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/662.probe.blast.complete.txt
+    jobid: 59
+    wildcards: sample=mock_community, target_rank=genus, similarity=0.1, taxon=662
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 02:51:52 2022]
+Finished job 38.
+21 of 94 steps (22%) done
+Select jobs to execute...
+
+[Tue Mar 29 02:51:52 2022]
+rule blast_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/666_consensus.int
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/666.probe.blast.complete.txt
+    jobid: 77
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=666
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 02:53:45 2022]
+Finished job 89.
+22 of 94 steps (23%) done
+Select jobs to execute...
+
+[Tue Mar 29 02:53:45 2022]
+rule evaluate_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/1580_consensus.int, /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/1580.probe.blast.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast/1580.probe.evaluation.complete.txt
+    jobid: 88
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=1580
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 02:53:52 2022]
+Finished job 69.
+23 of 94 steps (24%) done
+Select jobs to execute...
+
+[Tue Mar 29 02:53:52 2022]
+rule evaluate_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/285_consensus.int, /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/285.probe.blast.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast/285.probe.evaluation.complete.txt
+    jobid: 68
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=285
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 02:54:19 2022]
+Finished job 72.
+24 of 94 steps (26%) done
+Select jobs to execute...
+
+[Tue Mar 29 02:54:19 2022]
+rule blast_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/104102_consensus.int
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/104102.probe.blast.complete.txt
+    jobid: 93
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=104102
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 02:54:27 2022]
+Finished job 100.
+25 of 94 steps (27%) done
+Select jobs to execute...
+
+[Tue Mar 29 02:54:27 2022]
+rule blast_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/434_consensus.int
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/434.probe.blast.complete.txt
+    jobid: 47
+    wildcards: sample=mock_community, target_rank=genus, similarity=0.1, taxon=434
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 02:54:29 2022]
+Finished job 80.
+26 of 94 steps (28%) done
+Select jobs to execute...
+
+[Tue Mar 29 02:54:29 2022]
+rule blast_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/438_consensus.int
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/438.probe.blast.complete.txt
+    jobid: 85
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=438
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:03:39 2022]
+Finished job 77.
+27 of 94 steps (29%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:03:39 2022]
+rule evaluate_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/666_consensus.int, /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/666.probe.blast.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast/666.probe.evaluation.complete.txt
+    jobid: 76
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=666
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:03:40 2022]
+Finished job 59.
+28 of 94 steps (30%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:03:40 2022]
+rule evaluate_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/662_consensus.int, /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/662.probe.blast.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/blast/662.probe.evaluation.complete.txt
+    jobid: 58
+    wildcards: sample=mock_community, target_rank=genus, similarity=0.1, taxon=662
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:03:46 2022]
+Finished job 65.
+29 of 94 steps (31%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:03:46 2022]
+rule evaluate_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/564_consensus.int, /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/564.probe.blast.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast/564.probe.evaluation.complete.txt
+    jobid: 64
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=564
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:04:00 2022]
+Finished job 88.
+30 of 94 steps (32%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:04:00 2022]
+rule blast_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/1718_consensus.int
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/1718.probe.blast.complete.txt
+    jobid: 105
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=1718
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:04:02 2022]
+Finished job 68.
+31 of 94 steps (33%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:04:02 2022]
+rule blast_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/1716_consensus.int
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/1716.probe.blast.complete.txt
+    jobid: 51
+    wildcards: sample=mock_community, target_rank=genus, similarity=0.1, taxon=1716
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:06:02 2022]
+Finished job 93.
+32 of 94 steps (34%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:06:02 2022]
+rule evaluate_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/104102_consensus.int, /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/104102.probe.blast.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast/104102.probe.evaluation.complete.txt
+    jobid: 92
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=104102
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:06:06 2022]
+Finished job 47.
+33 of 94 steps (35%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:06:06 2022]
+rule evaluate_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/434_consensus.int, /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/434.probe.blast.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/blast/434.probe.evaluation.complete.txt
+    jobid: 46
+    wildcards: sample=mock_community, target_rank=genus, similarity=0.1, taxon=434
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:06:08 2022]
+Finished job 85.
+34 of 94 steps (36%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:06:08 2022]
+rule evaluate_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/438_consensus.int, /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/438.probe.blast.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast/438.probe.evaluation.complete.txt
+    jobid: 84
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=438
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:14:10 2022]
+Finished job 58.
+35 of 94 steps (37%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:14:10 2022]
+rule select_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/blast/2767886.probe.evaluation.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/2767886_probe_selection.csv
+    jobid: 29
+    wildcards: design_id=DSGN0001, taxon=2767886
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:14:10 2022]
+Finished job 76.
+36 of 94 steps (38%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:14:10 2022]
+rule select_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/blast/2767842.probe.evaluation.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/2767842_probe_selection.csv
+    jobid: 21
+    wildcards: design_id=DSGN0001, taxon=2767842
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:14:32 2022]
+Finished job 64.
+37 of 94 steps (39%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:14:32 2022]
+rule select_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast/108981.probe.evaluation.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/108981_probe_selection.csv
+    jobid: 79
+    wildcards: design_id=DSGN0000, taxon=108981
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:16:02 2022]
+Finished job 105.
+38 of 94 steps (40%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:16:02 2022]
+rule evaluate_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/1718_consensus.int, /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/primer3/1718.probe.blast.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast/1718.probe.evaluation.complete.txt
+    jobid: 104
+    wildcards: sample=mock_community, target_rank=species, similarity=0.1, taxon=1718
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:16:08 2022]
+Finished job 51.
+39 of 94 steps (41%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:16:08 2022]
+rule evaluate_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/1716_consensus.int, /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/primer3/1716.probe.blast.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/blast/1716.probe.evaluation.complete.txt
+    jobid: 50
+    wildcards: sample=mock_community, target_rank=genus, similarity=0.1, taxon=1716
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:16:36 2022]
+Finished job 92.
+40 of 94 steps (43%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:16:36 2022]
+rule select_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast/104102.probe.evaluation.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/104102_probe_selection.csv
+    jobid: 91
+    wildcards: design_id=DSGN0000, taxon=104102
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:16:46 2022]
+Finished job 46.
+41 of 94 steps (44%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:16:46 2022]
+rule select_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast/56459.probe.evaluation.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/56459_probe_selection.csv
+    jobid: 99
+    wildcards: design_id=DSGN0000, taxon=56459
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:16:50 2022]
+Finished job 84.
+42 of 94 steps (45%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:16:50 2022]
+rule select_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast/1590.probe.evaluation.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/1590_probe_selection.csv
+    jobid: 95
+    wildcards: design_id=DSGN0000, taxon=1590
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:24:24 2022]
+Finished job 29.
+43 of 94 steps (46%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:24:24 2022]
+rule add_spacers:
+    input: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/2767886_probe_selection.csv
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/2767886_probe_selection_sa.csv
+    jobid: 28
+    wildcards: design_id=DSGN0001, taxon=2767886
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:24:27 2022]
+Finished job 28.
+44 of 94 steps (47%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:24:27 2022]
+rule select_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast/1353.probe.evaluation.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/1353_probe_selection.csv
+    jobid: 71
+    wildcards: design_id=DSGN0000, taxon=1353
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:24:28 2022]
+Finished job 21.
+45 of 94 steps (48%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:24:28 2022]
+rule add_spacers:
+    input: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/2767842_probe_selection.csv
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/2767842_probe_selection_sa.csv
+    jobid: 20
+    wildcards: design_id=DSGN0001, taxon=2767842
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:24:32 2022]
+Finished job 20.
+46 of 94 steps (49%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:24:32 2022]
+rule select_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/blast/1350.probe.evaluation.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/1350_probe_selection.csv
+    jobid: 41
+    wildcards: design_id=DSGN0001, taxon=1350
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:24:49 2022]
+Finished job 79.
+47 of 94 steps (50%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:24:49 2022]
+rule add_spacers:
+    input: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/108981_probe_selection.csv
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/108981_probe_selection_sa.csv
+    jobid: 78
+    wildcards: design_id=DSGN0000, taxon=108981
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:24:52 2022]
+Finished job 78.
+48 of 94 steps (51%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:24:52 2022]
+rule select_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast/1580.probe.evaluation.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/1580_probe_selection.csv
+    jobid: 87
+    wildcards: design_id=DSGN0000, taxon=1580
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:26:27 2022]
+Finished job 104.
+49 of 94 steps (52%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:26:27 2022]
+rule select_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast/1718.probe.evaluation.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/1718_probe_selection.csv
+    jobid: 103
+    wildcards: design_id=DSGN0000, taxon=1718
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:26:30 2022]
+Finished job 91.
+50 of 94 steps (53%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:26:30 2022]
+rule add_spacers:
+    input: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/104102_probe_selection.csv
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/104102_probe_selection_sa.csv
+    jobid: 90
+    wildcards: design_id=DSGN0000, taxon=104102
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:26:33 2022]
+Finished job 90.
+51 of 94 steps (54%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:26:33 2022]
+rule select_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/blast/283.probe.evaluation.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/283_probe_selection.csv
+    jobid: 37
+    wildcards: design_id=DSGN0001, taxon=283
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:26:41 2022]
+Finished job 50.
+52 of 94 steps (55%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:26:41 2022]
+rule select_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/blast/1716.probe.evaluation.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/1716_probe_selection.csv
+    jobid: 49
+    wildcards: design_id=DSGN0001, taxon=1716
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:27:08 2022]
+Finished job 95.
+53 of 94 steps (56%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:27:08 2022]
+rule add_spacers:
+    input: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/1590_probe_selection.csv
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/1590_probe_selection_sa.csv
+    jobid: 94
+    wildcards: design_id=DSGN0000, taxon=1590
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:27:11 2022]
+Finished job 94.
+54 of 94 steps (57%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:27:11 2022]
+rule select_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/blast/338.probe.evaluation.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/338_probe_selection.csv
+    jobid: 25
+    wildcards: design_id=DSGN0001, taxon=338
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:27:12 2022]
+Finished job 99.
+55 of 94 steps (59%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:27:12 2022]
+rule add_spacers:
+    input: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/56459_probe_selection.csv
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/56459_probe_selection_sa.csv
+    jobid: 98
+    wildcards: design_id=DSGN0000, taxon=56459
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:27:14 2022]
+Finished job 98.
+56 of 94 steps (60%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:27:14 2022]
+rule select_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast/438.probe.evaluation.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/438_probe_selection.csv
+    jobid: 83
+    wildcards: design_id=DSGN0000, taxon=438
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:34:14 2022]
+Finished job 71.
+57 of 94 steps (61%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:34:14 2022]
+rule add_spacers:
+    input: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/1353_probe_selection.csv
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/1353_probe_selection_sa.csv
+    jobid: 70
+    wildcards: design_id=DSGN0000, taxon=1353
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:34:17 2022]
+Finished job 70.
+58 of 94 steps (62%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:34:17 2022]
+rule select_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast/285.probe.evaluation.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/285_probe_selection.csv
+    jobid: 67
+    wildcards: design_id=DSGN0000, taxon=285
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:34:34 2022]
+Finished job 87.
+59 of 94 steps (63%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:34:34 2022]
+rule add_spacers:
+    input: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/1580_probe_selection.csv
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/1580_probe_selection_sa.csv
+    jobid: 86
+    wildcards: design_id=DSGN0000, taxon=1580
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:34:34 2022]
+Finished job 41.
+60 of 94 steps (64%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:34:34 2022]
+rule add_spacers:
+    input: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/1350_probe_selection.csv
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/1350_probe_selection_sa.csv
+    jobid: 40
+    wildcards: design_id=DSGN0001, taxon=1350
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:34:37 2022]
+Finished job 86.
+61 of 94 steps (65%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:34:37 2022]
+rule select_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast/564.probe.evaluation.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/564_probe_selection.csv
+    jobid: 63
+    wildcards: design_id=DSGN0000, taxon=564
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:34:38 2022]
+Finished job 40.
+62 of 94 steps (66%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:34:38 2022]
+rule select_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast/666.probe.evaluation.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/666_probe_selection.csv
+    jobid: 75
+    wildcards: design_id=DSGN0000, taxon=666
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:35:13 2022]
+Finished job 103.
+63 of 94 steps (67%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:35:13 2022]
+rule add_spacers:
+    input: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/1718_probe_selection.csv
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/1718_probe_selection_sa.csv
+    jobid: 102
+    wildcards: design_id=DSGN0000, taxon=1718
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:35:15 2022]
+Finished job 102.
+64 of 94 steps (68%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:35:15 2022]
+rule select_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/blast/662.probe.evaluation.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/662_probe_selection.csv
+    jobid: 57
+    wildcards: design_id=DSGN0001, taxon=662
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:35:34 2022]
+Finished job 49.
+65 of 94 steps (69%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:35:34 2022]
+rule add_spacers:
+    input: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/1716_probe_selection.csv
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/1716_probe_selection_sa.csv
+    jobid: 48
+    wildcards: design_id=DSGN0001, taxon=1716
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:35:37 2022]
+Finished job 48.
+66 of 94 steps (70%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:35:37 2022]
+rule select_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/blast/561.probe.evaluation.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/561_probe_selection.csv
+    jobid: 53
+    wildcards: design_id=DSGN0001, taxon=561
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:36:19 2022]
+Finished job 37.
+67 of 94 steps (71%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:36:19 2022]
+rule add_spacers:
+    input: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/283_probe_selection.csv
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/283_probe_selection_sa.csv
+    jobid: 36
+    wildcards: design_id=DSGN0001, taxon=283
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:36:21 2022]
+Finished job 36.
+68 of 94 steps (72%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:36:21 2022]
+rule select_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/blast/469.probe.evaluation.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/469_probe_selection.csv
+    jobid: 33
+    wildcards: design_id=DSGN0001, taxon=469
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:36:28 2022]
+Finished job 83.
+69 of 94 steps (73%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:36:28 2022]
+rule add_spacers:
+    input: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/438_probe_selection.csv
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/438_probe_selection_sa.csv
+    jobid: 82
+    wildcards: design_id=DSGN0000, taxon=438
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:36:31 2022]
+Finished job 82.
+70 of 94 steps (74%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:36:31 2022]
+rule select_taxon_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/blast/434.probe.evaluation.complete.txt
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/434_probe_selection.csv
+    jobid: 45
+    wildcards: design_id=DSGN0001, taxon=434
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:36:45 2022]
+Finished job 25.
+71 of 94 steps (76%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:36:45 2022]
+rule add_spacers:
+    input: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/338_probe_selection.csv
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/338_probe_selection_sa.csv
+    jobid: 24
+    wildcards: design_id=DSGN0001, taxon=338
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:36:48 2022]
+Finished job 24.
+72 of 94 steps (77%) done
+[Tue Mar 29 03:41:46 2022]
+Finished job 67.
+73 of 94 steps (78%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:41:46 2022]
+rule add_spacers:
+    input: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/285_probe_selection.csv
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/285_probe_selection_sa.csv
+    jobid: 66
+    wildcards: design_id=DSGN0000, taxon=285
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:41:48 2022]
+Finished job 66.
+74 of 94 steps (79%) done
+[Tue Mar 29 03:41:55 2022]
+Finished job 63.
+75 of 94 steps (80%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:41:55 2022]
+rule add_spacers:
+    input: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/564_probe_selection.csv
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/564_probe_selection_sa.csv
+    jobid: 62
+    wildcards: design_id=DSGN0000, taxon=564
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:41:57 2022]
+Finished job 62.
+76 of 94 steps (81%) done
+[Tue Mar 29 03:41:58 2022]
+Finished job 75.
+77 of 94 steps (82%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:41:58 2022]
+rule add_spacers:
+    input: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/666_probe_selection.csv
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/666_probe_selection_sa.csv
+    jobid: 74
+    wildcards: design_id=DSGN0000, taxon=666
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:42:00 2022]
+Finished job 74.
+78 of 94 steps (83%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:42:00 2022]
+rule collect_selected_probe_information:
+    input: /home/miri/Desktop/HIPRFISH/simulation_table/simulation_table_mock.csv, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/564_probe_selection_sa.csv, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/285_probe_selection_sa.csv, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/1353_probe_selection_sa.csv, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/666_probe_selection_sa.csv, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/108981_probe_selection_sa.csv, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/438_probe_selection_sa.csv, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/1580_probe_selection_sa.csv, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/104102_probe_selection_sa.csv, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/1590_probe_selection_sa.csv, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/56459_probe_selection_sa.csv, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/1718_probe_selection_sa.csv
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/taxon_best_probes.csv, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/taxon_best_probes_filtered.csv, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/taxon_best_probes_summary.csv
+    jobid: 4
+    wildcards: design_id=DSGN0000
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:42:01 2022]
+Finished job 4.
+79 of 94 steps (84%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:42:01 2022]
+rule generate_full_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/taxon_best_probes.csv
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/DSGN0000_full_length_probes_sequences.txt, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/DSGN0000_full_length_blocking_probes_sequences.txt, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/DSGN0000_full_length_helper_probes_sequences.txt, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/DSGN0000_full_length_probes_summary.txt
+    jobid: 3
+    wildcards: design_id=DSGN0000
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:42:30 2022]
+Finished job 57.
+80 of 94 steps (85%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:42:30 2022]
+rule add_spacers:
+    input: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/662_probe_selection.csv
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/662_probe_selection_sa.csv
+    jobid: 56
+    wildcards: design_id=DSGN0001, taxon=662
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:42:32 2022]
+Finished job 56.
+81 of 94 steps (86%) done
+[Tue Mar 29 03:42:43 2022]
+Finished job 53.
+82 of 94 steps (87%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:42:43 2022]
+rule add_spacers:
+    input: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/561_probe_selection.csv
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/561_probe_selection_sa.csv
+    jobid: 52
+    wildcards: design_id=DSGN0001, taxon=561
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:42:45 2022]
+Finished job 52.
+83 of 94 steps (88%) done
+[Tue Mar 29 03:43:23 2022]
+Finished job 33.
+84 of 94 steps (89%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:43:23 2022]
+rule add_spacers:
+    input: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/469_probe_selection.csv
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/469_probe_selection_sa.csv
+    jobid: 32
+    wildcards: design_id=DSGN0001, taxon=469
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:43:25 2022]
+Finished job 32.
+85 of 94 steps (90%) done
+[Tue Mar 29 03:43:47 2022]
+Finished job 45.
+86 of 94 steps (91%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:43:47 2022]
+rule add_spacers:
+    input: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/434_probe_selection.csv
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/434_probe_selection_sa.csv
+    jobid: 44
+    wildcards: design_id=DSGN0001, taxon=434
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:43:49 2022]
+Finished job 44.
+87 of 94 steps (93%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:43:49 2022]
+rule collect_selected_probe_information:
+    input: /home/miri/Desktop/HIPRFISH/simulation_table/simulation_table_mock.csv, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/2767842_probe_selection_sa.csv, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/338_probe_selection_sa.csv, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/2767886_probe_selection_sa.csv, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/469_probe_selection_sa.csv, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/283_probe_selection_sa.csv, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/1350_probe_selection_sa.csv, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/434_probe_selection_sa.csv, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/1716_probe_selection_sa.csv, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/561_probe_selection_sa.csv, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/662_probe_selection_sa.csv
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/taxon_best_probes.csv, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/taxon_best_probes_filtered.csv, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/taxon_best_probes_summary.csv
+    jobid: 12
+    wildcards: design_id=DSGN0001
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 03:43:49 2022]
+Finished job 12.
+88 of 94 steps (94%) done
+Select jobs to execute...
+
+[Tue Mar 29 03:43:49 2022]
+rule generate_full_probes:
+    input: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/taxon_best_probes.csv
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/DSGN0001_full_length_probes_sequences.txt, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/DSGN0001_full_length_blocking_probes_sequences.txt, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/DSGN0001_full_length_helper_probes_sequences.txt, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/DSGN0001_full_length_probes_summary.txt
+    jobid: 11
+    wildcards: design_id=DSGN0001
+    resources: tmpdir=/tmp
+
+[Tue Mar 29 04:44:36 2022]
+Error in rule generate_full_probes:
+    jobid: 11
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/DSGN0001_full_length_probes_sequences.txt, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/DSGN0001_full_length_blocking_probes_sequences.txt, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/DSGN0001_full_length_helper_probes_sequences.txt, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/DSGN0001_full_length_probes_summary.txt
+    shell:
+        python3 /home/miri/Desktop/HIPRFISH/hiprfish_code/probe-design/hiprfish-probe-design-consensus/hiprfish_generate_full_probes.py /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001 /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/consensus /home/miri/Desktop/HIPRFISH/data/utilities/mock_community/genus/s_0.1/consensus /home/miri/Desktop/HIPRFISH/data/mock_community/genus/s_0.1/blast /home/miri/Desktop/HIPRFISH/data/mock_community/input/mock_community.oriented.fasta 0.99 14 15 -ps C -t genus -bs MostSimple -hr 14 -tc white
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job generate_full_probes since they might be corrupted:
+/home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/DSGN0001_full_length_probes_sequences.txt, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/DSGN0001_full_length_blocking_probes_sequences.txt, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0001/DSGN0001_full_length_helper_probes_sequences.txt
+[Tue Mar 29 04:46:51 2022]
+Error in rule generate_full_probes:
+    jobid: 3
+    output: /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/DSGN0000_full_length_probes_sequences.txt, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/DSGN0000_full_length_blocking_probes_sequences.txt, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/DSGN0000_full_length_helper_probes_sequences.txt, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/DSGN0000_full_length_probes_summary.txt
+    shell:
+        python3 /home/miri/Desktop/HIPRFISH/hiprfish_code/probe-design/hiprfish-probe-design-consensus/hiprfish_generate_full_probes.py /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000 /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/consensus /home/miri/Desktop/HIPRFISH/data/utilities/mock_community/species/s_0.1/consensus /home/miri/Desktop/HIPRFISH/data/mock_community/species/s_0.1/blast /home/miri/Desktop/HIPRFISH/data/mock_community/input/mock_community.oriented.fasta 0.99 14 15 -ps C -t species -bs MostSimple -hr 14 -tc white
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job generate_full_probes since they might be corrupted:
+/home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/DSGN0000_full_length_probes_sequences.txt, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/DSGN0000_full_length_blocking_probes_sequences.txt, /home/miri/Desktop/HIPRFISH/data/simulation/DSGN0000/DSGN0000_full_length_helper_probes_sequences.txt
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/miri/Desktop/HIPRFISH/hiprfish_code/probe-design/hiprfish-probe-design-consensus/.snakemake/log/2022-03-29T022656.581586.snakemake.log
