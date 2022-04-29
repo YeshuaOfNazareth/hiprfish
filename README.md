@@ -25,11 +25,17 @@ This pipeline enables design of complex oligo probe sets used for highly multipl
 The pipeline requires a local copy of the 16SMicrobial database from NCBI.
 
 ### Before running the pipeline
-1. Install [Miniconda](https://docs.conda.io/en/latest/miniconda.html),
-2. Install the environment by running the following commands:
+0. This pipeline was run on Ubuntu.
+
+1. Download [Miniconda](https://repo.anaconda.com/miniconda/Miniconda3-py38_4.11.0-Linux-x86_64.sh). Install it via the following commands and type yes if needed:
+      `cd downloads`\
+      `bash Miniconda3-py38_4.11.0-Linux-x86_64.sh (if you get errors here, verify the file name.)`\
+      `echo "PATH=\$PATH:/home/TYPE YOUR USERNAME HERE/.local/bin" >> ~/.bashrc`
+
+2. Install the environment by running the following commands and typing "yes" if you have a choice:
      `conda create -n hiprfish python=3.8`\
      `conda activate hiprfish`\
-     `conda install pandas`\
+     `conda install pandas=1.3.1`\
      `conda install -c bioconda primer3 -y`\
      `conda install -c anaconda joblib -y`\
      `conda install -c anaconda biopython -y`\
@@ -41,25 +47,51 @@ The pipeline requires a local copy of the 16SMicrobial database from NCBI.
      `pip install matplotlib`\
      `python -m pip install --user numpy scipy matplotlib ipython jupyter pandas sympy nose`
      
-3. Install usearch. [Download](https://www.drive5.com/usearch/download.html) usearch executable. Move the downloaded file to a directory of your choosing. 
-     
-4. Install blast. [Download](https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/) the latest version and install the downloaded package. 
+3. Create a folder on the desktop and label it “hiprfish”. Download archive from github and extract contents of hiprfish-master to newly created hiprfish folder.
 
-5. [Download](https://ftp.ncbi.nlm.nih.gov/blast/db/) a copy of the NCBI 16S rRNA database.
+4. Open terminal and type:
+     `cd hiprfish`\
+     `chmod +x usearch11.0.667_i86linux32`
 
-6. Edit the `hiprfish_config.json file` to point the pipeline to the correct directories.
-   - `__default__`
-      * `SCRIPTS_PATH`: path to the folder that contains all the scripts
-      * `DATA_DIR`: path to the folder that contains input folders and files
-   - `blast`
-      * `16s_db`: path to the local copy of NCBI 16SMicrobial database. If you put the database files in `/[PATH_TO_16S_DB]/16S_ribosoma_RNA` (i.e. the path name to the full database files look like `/[PATH_TO_16S_DB]/16S_ribosoma_RNA/16S_ribosoma_RNA.n*`), you should set the value of this variable to `/[PATH_TO_16S_DB]/16S_ribosoma_RNA/16S_ribosoma_RNA`.
-   -  `primer3`
-      * `primer3_exec_dir`: path to the primer3 executable. If you installed primer3 via conda, you can likely just put "primer3_core" here. If that alias somehow does not work, you can put the full path to the primer3_core executable instead.
-      * `primer3_config_dir`: configuration files for primer3. You can [download](https://github.com/primer3-org/primer3) the source repository and copy the primer3_config folder to a location of your choosing on your local system.
-   -  `usearch`
-      * `usearch_dir`: path to the usearch executable
-   - `simulations`
-      * `simulation_table`: path to the simulation summary file
+5. Install blast via terminal:
+     `sudo apt install ncbi-blast+`
+
+6. [Download](https://ftp.ncbi.nlm.nih.gov/blast/db/16S_ribosomal_RNA.tar.gz) a copy of the NCBI 16S rRNA database. Move database contents (taxdb, etc.) inside the  16S_ribosomal_RNA folder, which is found in hiprfish>RNA. Make sure to delete text.txt file.
+
+7. Install primer3 via terminal:
+     `sudo apt-get install -y build-essential g++ cmake git-all`\
+     `git clone https://github.com/primer3-org/primer3.git primer3`\
+     `cd primer3/src`\
+     `make`\
+     `make test`
+
+8. Edit the `hiprfish_config.json file` to point the pipeline to the correct directories.
+   a.	Go to hiprfish/hiprfish_code/probe-design/hiprfish-probe-design-consensus/hiprfish_config.json and open hiprfish_config via text editor
+   b.	If you have been following this guide, then your config parameters should look like this:
+{
+    "__default__" :
+    {
+        "SCRIPTS_PATH" : "/home/TYPE YOUR USERNAME/Desktop/hiprfish/hiprfish_code/probe-design/hiprfish-probe-design-consensus",
+        "DATA_DIR" : "/home/ TYPE YOUR USERNAME /Desktop/hiprfish/data"
+    },
+    "blast":
+    {
+        "16s_db" : "/home/ TYPE YOUR USERNAME /Desktop/hiprfish/RNA/16S_ribosomal_RNA/16S_ribosomal_RNA"
+    },
+    "primer3":
+    {
+        "primer3_exec_dir" : /home/TYPE YOUR USERNAME/primer3/src/primer3_core",
+        "primer3_config_dir" : "/home/ TYPE YOUR USERNAME /Desktop/hiprfish/primer3_config/primer3_config"
+    },
+    "usearch":
+    {
+        "usearch_dir" : "/home/ TYPE YOUR USERNAME /Desktop/hiprfish/usearch11.0.667_i86linux32"
+    },
+    "simulations" :
+    {
+        "simulation_table" : "/home/ TYPE YOUR USERNAME /Desktop/hiprfish/simulation_table/simulation_table_example.csv"
+    }
+
 
 ### Input
 1. Simulation summary file (simulation_table_test.csv)
@@ -108,7 +140,17 @@ The pipeline requires a local copy of the 16SMicrobial database from NCBI.
 1. Simulation results file
    - A csv file containing all the parameters for all the designs, as well as some summary statistics for each design
 2. Probe folder
-   - A folder containing selected probe summary files for each taxa, a concatenated file containing all selected probes, a file containing information for all the blocking probes, as well as text files that can be sent as is to array synthesis vendors for complex oligo pool synthesis.
+   - A folder containing selected probe summary files for each taxa, a concatenated file containing all selected probes, a file containing information for all the blocking probes, as well as text files that can be sent as is to array synthesis vendors for complex oligo pool synthesis. View your results inside hiprfish>data>simulation>dsgn0000 folder and find useful statistics in simulation_table folder.
+
+### Before you start
+•	Go to hiprfish>data and delete simulation folder
+•	Go to hiprfish>data>mock_  community and delete species and utilities folders
+•	Go to hiprfish>data>mock_  community>input and delete all files except mock_community.fasta 
+•	Input desired sequences inside mock_community.fasta file
+•	Set desired variables inside simulation_table_example.csv
 
 ### Running the pipeline
-Run `snakemake --configfile hiprfish_config.json -j n`, where `n` is the number of cores to be used. If the pipeline excuted without errors, you should see a file called `simulation_table_test_results.csv` in the same directory where you put the `simulation_table_test.csv` file. It can be useful to run a design at a high taxonomic rank (phylum, for example) to make sure that the pipeline runs correctly with the input files.
+1.	Go to hiprbish-probe-design-consesus folder (/home/YOUR USERNAME/Desktop/hiprfish/hiprfish_code/probe-design/hiprfish-probe-design-consensus/) and right click on the background. Select open in terminal.
+2.	Type conda activate hiprfish
+3.	Type snakemake --configfile hiprfish_config.json -j n (where n is the number of cores you are willing to utilize, I personally use 8)
+
