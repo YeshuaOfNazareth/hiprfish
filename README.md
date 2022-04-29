@@ -68,29 +68,7 @@ The pipeline requires a local copy of the 16SMicrobial database from NCBI.
 8. Edit the `hiprfish_config.json file` to point the pipeline to the correct directories.
    a.	Go to hiprfish/hiprfish_code/probe-design/hiprfish-probe-design-consensus/hiprfish_config.json and open hiprfish_config via text editor
    b.	If you have been following this guide, then your config parameters should look like this:
-{
-    "__default__" :
-    {
-        "SCRIPTS_PATH" : "/home/TYPE YOUR USERNAME/Desktop/hiprfish/hiprfish_code/probe-design/hiprfish-probe-design-consensus",
-        "DATA_DIR" : "/home/ TYPE YOUR USERNAME /Desktop/hiprfish/data"
-    },
-    "blast":
-    {
-        "16s_db" : "/home/ TYPE YOUR USERNAME /Desktop/hiprfish/RNA/16S_ribosomal_RNA/16S_ribosomal_RNA"
-    },
-    "primer3":
-    {
-        "primer3_exec_dir" : /home/TYPE YOUR USERNAME/primer3/src/primer3_core",
-        "primer3_config_dir" : "/home/ TYPE YOUR USERNAME /Desktop/hiprfish/primer3_config/primer3_config"
-    },
-    "usearch":
-    {
-        "usearch_dir" : "/home/ TYPE YOUR USERNAME /Desktop/hiprfish/usearch11.0.667_i86linux32"
-    },
-    "simulations" :
-    {
-        "simulation_table" : "/home/ TYPE YOUR USERNAME /Desktop/hiprfish/simulation_table/simulation_table_example.csv"
-    }
+![image](https://user-images.githubusercontent.com/86243044/165884377-cf0bfefe-129c-4b12-822e-26d454fe92e3.png)
 
 
 ### Input
